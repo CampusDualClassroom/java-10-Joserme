@@ -34,8 +34,18 @@ public class Exercise10 {
        String mensaje = "";
         int numcolor;
         ArrayList<String> colores = new ArrayList<>(Arrays.asList("rojo","azul","verde"));
-            numcolor = (randomWithRange(0,3));
-            mensaje = colores.get(numcolor);
+        numcolor = (randomWithRange(0,3));
+        switch (numcolor){
+            case 0:
+                mensaje = colores.get(numcolor);
+                break;
+            case 1:
+                mensaje = colores.get(numcolor);
+                break;
+            case 2:
+                mensaje = colores.get(numcolor);
+                break;
+        }
         return mensaje;
     }
 
