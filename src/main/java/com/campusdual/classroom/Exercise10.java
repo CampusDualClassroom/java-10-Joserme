@@ -1,5 +1,7 @@
 package com.campusdual.classroom;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Exercise10 {
@@ -8,8 +10,17 @@ public class Exercise10 {
     // Imprimir el color de las pelotas que salgan, hasta que salgan 2 de color azul
     // El mensaje a imprimir es → La bola es de color: COLOR_BOLA
     // COLOR_BOLA puede ser → rojo, azul, verde
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
+        String  color;
+        int contador = 0;
+        do {
+            color = getBall();
+            System.out.println("La bola es de color: "+color);
+            if(color.contains("azul")){
+            contador++;
+            }
+        }while (contador != 2);
     }
 
     //TODO ↓
@@ -20,10 +31,26 @@ public class Exercise10 {
     // 2 → azul
     // 3 → verde
     public static String getBall() {
-        return null;
+       String mensaje = "";
+        int numcolor;
+        ArrayList<String> colores = new ArrayList<>(Arrays.asList("rojo","azul","verde"));
+        numcolor = (randomWithRange(0,3));
+        switch (numcolor){
+            case 0:
+                mensaje = colores.get(numcolor);
+                break;
+            case 1:
+                mensaje = colores.get(numcolor);
+                break;
+            case 2:
+                mensaje = colores.get(numcolor);
+                break;
+        }
+        return mensaje;
     }
 
     public static int randomWithRange(int min, int max) {
+
         return ThreadLocalRandom.current().nextInt(min,max);
     }
 }
